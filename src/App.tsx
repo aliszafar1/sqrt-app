@@ -1,5 +1,5 @@
 import React from 'react';
-import FormComponent from './components/sqrt-form/sqrt-form';
+import FormComponent from './containers/sqrt-form/sqrt-form';
 import './App.css';
 
 

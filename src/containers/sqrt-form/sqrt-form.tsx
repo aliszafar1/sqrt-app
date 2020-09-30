@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSqrtOfNumber } from '../../store/sqrt/actions';
-import Button from '../../common/button';
+import Button from '../../common/button/button';
 import './styles.css';
 
 export default function () {
+    // Create Root Reducer interface;
     const {isGettingSqrt, sqrtAnswer, apiError} = useSelector(state => (state as any).SqrtReducer);
     const [numberToBeSqrt, setNumberToBeSqrt] = useState(0);
     const dispatch = useDispatch();
 
     const isSubmitBtnDisabled = (isGettingSqrt === true) || (numberToBeSqrt === 0);
 
-    const handleSubmit = (event:any) => {
+    const handleSubmit = (event:React.FormEvent) => {
         event.preventDefault();
         dispatch(getSqrtOfNumber({number: numberToBeSqrt}));
       }
@@ -30,7 +31,6 @@ export default function () {
                         />
               </form>
             <p className={`${sqrtAnswer ? "success" : "failure"}`}>{sqrtAnswer || apiError}</p>
-            {<p></p>}
       </div>
     )
 }

@@ -10,21 +10,13 @@ interface ButtonProps {
 }
 
  const submitBtnPlaceholder = (placeholderText: string, loaderVisibility: boolean | undefined) => {
-      
-        if(loaderVisibility) {
-            return  (<ClipLoader
-                        size={13}
-                        color={"#123abc"}
-                        loading={true}
-                    />)
-        }
-        return placeholderText;
+    if(loaderVisibility) {
+        return <ClipLoader size={13} color={"#123abc"} loading={true} />
     }
-
+    return placeholderText;
+}
 
 export default function (props:  ButtonProps) {
     const {disabled, placeholderText, loaderVisibility} = props;
-    return (
-        <button className="btn" disabled={disabled}>{submitBtnPlaceholder(placeholderText, loaderVisibility)}</button>
-    )
+    return  <button className="btn" disabled={disabled}>{submitBtnPlaceholder(placeholderText, loaderVisibility)}</button>;
 }
