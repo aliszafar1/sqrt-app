@@ -1,0 +1,21 @@
+.form-heading{
+    color: skyblue;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    
+    max-width: 330px;
+    height: 50px;
+}
+
+.success{
+    color: green;
+}
+.failure {
+    color: red;
+}
