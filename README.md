@@ -42,3 +42,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Important Notes
+1. As per the requirement I have created variable for timedelay inside src/store/sqrt/epic, by which you can add time in milliseconds.
+2. While duirng testing it was also found once API response comes after 11 sec naturally, so make sure to keep this thing when testing functionality.
+3. As per the browser policies I need to handle CORS functionality so I choose an Heroku based url, since Heroku goes sometimes sleep so in that case it could show error message instead of correct response.
+4. I have also added retry process if something goes wrong when user communicating with API, for testing it also has the same path i.e. src/store/sqrt/epic. Feel free to update the variable and use a wrong keyword in the last of URL in file src/services/sqrt & check on the network tab of browser to see the results.
+5. For incorrect input data, I am using button disabled functionality. If user enters otherthan number input it won't enabled submit button. Only number input is allowed to submit form.
