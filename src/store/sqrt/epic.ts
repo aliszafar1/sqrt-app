@@ -7,8 +7,9 @@ import SqrtServices from '../../services/sqrt/sqrt';
 import {mergeMap, map, catchError,retry, timeout} from 'rxjs/operators';
 import {of} from 'rxjs';
 
-const NumberOfAPICallRetryAttempt = 2;
-const APITimeoutDuration = 15e3; // In milliseconds
+import AppConfig from '../../config/app-config';
+
+const {NumberOfAPICallRetryAttempt, APITimeoutDuration} = AppConfig;
 
 export const SqrtEpic:Epic=  (action$) => {
     return action$.pipe(
